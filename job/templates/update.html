@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jobedited</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+<form method="POST" class="get-form" action="/update/">
+    <input type="hidden" name="id" value="{{jobs.id}}">
+    {% csrf_token %}
+    <center>
+    <div class="container">
+        <br>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <h3 style="color:blue;">Update Details</h3>
+
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">name:</label>
+            <div class="col-sm-4">
+                <input type="text" name="name" id="id_name" required maxlength="100"
+                       value="{{ jobs.name }}"/>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">emails:</label>
+            <div class="col-sm-4">
+                <input type="email" name="email" id="id_email" required maxlength="20"
+                       value="{{ jobs.email }}"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Contact:</label>
+            <div class="col-sm-4">
+                <input type="text" name="contact" id="id_contact" required maxlength="100"
+                       value="{{ jobs.contact }}"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Details:</label>
+            <div class="col-sm-4">
+                <input type="text" name="details" id="id_details" required maxlength="100"
+                       value="{{ jobs.details }}"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">experience:</label>
+            <div class="col-sm-4">
+                <input type="text" name="experience" id="id_experience" required maxlength="100"
+                       value="{{ jobs.experience }}"/>
+            </div>
+        </div>
+        <br>
+<!--        <label  for="resume"> Resume : </label>-->
+
+<!--      <input type="file" name="resume" value="{{resume}}"  id="avatar" name="avatar"  accept="application/pdf, pdf/pdf"><br>-->
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-success">Update</button>
+            </div>
+        </div>
+    </div>
+        <br>
+        <center><a href="/read" class="btn btn-primary"><h2>All Data</h2></a></center>
+        </center>
+</form>
+</body>
+</html>
